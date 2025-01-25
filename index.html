@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Check Leap-Year</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        function playNumberGuessingGame() {
+            const randomNumber = Math.floor(Math.random() * 20) + 1;
+            let guess = null;
+
+            alert("Welcome to the Number Guessing Game!");
+            alert("I am thinking of a number between 1 and 20. Can you guess it?");
+
+            while (guess !== randomNumber) {
+
+                guess = parseInt(prompt("Enter your guess (1-20):"));
+
+                if (isNaN(guess) || guess < 1 || guess > 20) {
+                    alert("Please enter a valid number between 1 and 10.");
+                    continue;
+                }
+
+                if (guess === randomNumber) {
+                    alert("Congratulations! You guessed the correct number: " + randomNumber);
+                    break;
+                } else if (guess < randomNumber) {
+                    alert("Too low! Try again.");
+                } else {
+                    alert("Too high! Try again.");
+                }
+            }
+        }
+        playNumberGuessingGame();
+    </script>
+</body>
+
+</html>
